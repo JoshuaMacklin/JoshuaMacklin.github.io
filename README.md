@@ -1,5 +1,5 @@
 # JoshuaMacklin.github.io
-This will be the home of my personal website! 
+This will be the home of my personal website
 
 ![alt tag](https://i.imgur.com/R8z8qB5.png)
 
