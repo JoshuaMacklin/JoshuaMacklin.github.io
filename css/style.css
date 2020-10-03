@@ -149,8 +149,8 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid #ced4da !important; }
 
 .site-footer {
-  padding-top: 17rem;
-  padding-bottom: 4rem;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
   background: #333333; }
   .site-footer p {
     color: #8c8c8c; }
@@ -694,7 +694,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 30px; }
 
 .ul-check {
-  margin-bottom: 50px; }
+  margin-bottom: 12px; }
   .ul-check li {
     position: relative;
     padding-left: 35px;
@@ -869,7 +869,7 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
       font-style: italic;
       margin-top: 12px;
-      color: lightgrey;
+      color: #9e9e9e;
     }
     .img-fluid{
       border-radius: 18px;

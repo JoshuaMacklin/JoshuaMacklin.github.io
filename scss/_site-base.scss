@@ -6,11 +6,11 @@ body {
 	font-size: $font-size-base;
 	font-family: $font-family-sans-serif;
 }
-::-moz-selection { 
+::-moz-selection {
 	background: $black;
 	color: $white;
 }
-::selection { 
+::selection {
 	background: $black;
 	color: $white;
 }
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: 100%;
 		z-index: 2;
 		overflow: hidden;
-		
+
 		&:before {
 			opacity: 1;
 			visibility: visible;
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	&.btn-primary {
 		color: $white;
-		
+
 		&:hover, &:focus, &:active {
 			border-color: $primary!important;
 			color: $primary!important;
@@ -162,9 +162,9 @@ h1, h2, h3, h4, h5, h6 {
 			width: 40px;
 			height: 2px;
 			background: $primary;
-		}	
+		}
 	}
-	
+
 }
 
 .border-top {
@@ -172,19 +172,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-footer {
-	padding-top: 17rem;
+	padding-top: 4rem;
 	padding-bottom: 4rem;
 	background: lighten($black, 20%);
 	p {
-		color: lighten($black, 55%); 
+		color: lighten($black, 55%);
 	}
 	h2,h3,h4,h5 {
 		color: $white;
 	}
 	a {
-		color: lighten($black, 70%); 
+		color: lighten($black, 70%);
 		&:hover {
-			color: lighten($black, 100%); 
+			color: lighten($black, 100%);
 		}
 	}
 	ul {
