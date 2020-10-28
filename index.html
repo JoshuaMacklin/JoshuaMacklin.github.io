@@ -201,6 +201,36 @@
             <h2 class="title text-primary mb-3">Latest Projects</h2>
           </div>
         </div>
+
+        <div class="row mb-5">
+          <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+            <a href="https://fiscally-demo.herokuapp.com/" target="_blank">
+              <img src="https://i.imgur.com/JjP0ZoO.png" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
+            <h3>Fiscally</h3>
+            <p class="mb-4">A FinTech full stack web application using the Plaid API to grab current up to date bank account information, at the same time showing your progress towards your Savings goals with graphs and charts to help gamify your financial future.</p>
+            <p>Fiscally - Turning your financial dreams into realities!</p>
+            <p class="mb-4"><a href="https://fiscally-demo.herokuapp.com/" target="_blank" class="readmore">View Live Version</a></p>
+            <!-- <p class="mb-4"><a href="https://github.com/JoshuaMacklin/todo-list-2019-week05" target="_blank" class="readmore">Github Repository</a></p> -->
+            <!-- <div class="testimonial h-100">
+              <blockquote class="mb-3">
+                <p>&ldquo;This has helped me get my financial future on track!&rdquo;</p>
+              </blockquote>
+              <div class="d-flex align-items-center vcard">
+                <figure class="mb-0 mr-3">
+                  <img src="media/NyahMacklin.png" alt="Image" class="img-fluid ounded-circle">
+                </figure>
+                <div class="vcard-text">
+                  <span class="d-block">Nyah M.</span>
+                  <span class="position">Software Engineer</span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
         <div class="row mb-5">
           <div class="col-lg-6 mb-4 mb-lg-0">
             <a href="https://daily-weather.netlify.app/" target="_blank">
@@ -610,6 +640,7 @@
       $('.site-navbar .site-logo a').toggleClass("text-black text-white");
       $('.toggle-btn').toggleClass("text-black text-white");
       $('.site-footer').toggleClass("lightBack darkBack");
+      $('.testimonial').toggleClass("darkTest");
     }
 
     toggleBtn.addEventListener('click', function(){
@@ -621,6 +652,7 @@
       $('.site-navbar .site-logo a').toggleClass("text-black text-white");
       $('.toggle-btn').toggleClass("text-black text-white");
       $('.site-footer').toggleClass("lightBack darkBack");
+      $('.testimonial').toggleClass("darkTest");
 
       if(document.body.classList.contains('dark-theme')){
         localStorage.setItem('currentTheme', 'themeActive')

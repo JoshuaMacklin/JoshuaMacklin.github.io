@@ -2,9 +2,7 @@
 /* body{
   background-color: white;
 } */
-:root{
-  /* transition: background-color 1s, color 1s; */
-}
+
 
 body {
   line-height: 1.7;
@@ -120,7 +118,9 @@ a {
   height: 47px;
   background: #f6f6f6;
   border-radius: 0;
-  border: 1px solid #f6f6f6; }
+  border: 1px solid #f6f6f6;
+  border-radius: 25px;
+}
   .form-control:active, .form-control:focus {
     border-color: #bd1220; }
   .form-control:hover, .form-control:active, .form-control:focus {
@@ -302,9 +302,9 @@ a {
         margin-top: 20px;
         margin-left: 0px;
         background: #fff;
-        -webkit-transition: 0.2s 0s;
-        -o-transition: 0.2s 0s;
-        transition: 0.2s 0s;
+        -webkit-transition: 0.3s 0s;
+        -o-transition: 0.3s 0s;
+        transition: 0.3s 0s;
         border-radius: 4px; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top {
           position: absolute; }
@@ -844,13 +844,18 @@ a {
 .person h3 {
   font-size: 1.2rem; }
 
+.darkTest{
+  background-color: rgba(25,25,25,1.0);
+}
+
 .testimonial {
   padding: 30px;
   /* color: #000; */
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   line-height: 1.7;
-  font-style: italic; }
+  font-style: italic;
+  border-radius: 25px; }
   .testimonial .vcard figure {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50px;
@@ -911,4 +916,9 @@ a {
     .dark-theme-nav{
       background-color: rgba(16,16,16,0.95);
       color: rgba(248,249,252,1.0);
+    }
+    .col-12{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
