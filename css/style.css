@@ -11,6 +11,7 @@ body {
   font-size: 1rem;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   transition: background-color .3s, color .3s;
+  background-color: rgba(248,249,252,1.0);
 }
 
 /* body h1, h2, h3, h4, h5, h6 {
@@ -240,7 +241,7 @@ a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
 
 .site-navbar {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(248,249,252,0.90);
   margin-bottom: 0px;
   width: 100%;
   padding: 15px 0; }
@@ -523,7 +524,10 @@ a {
   .sticky-wrapper.is-sticky .site-navbar {
     /* background-color: #fff; */
     -webkit-box-shadow: 0px 0 20px -5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0 20px -5px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 0 20px -5px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(180%) blur(5px);
+  }
     .sticky-wrapper.is-sticky .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
       padding: 10px 5px; }
@@ -915,7 +919,7 @@ a {
       color: rgba(248,249,252,1.0);
     }
     .dark-theme-nav{
-      background-color: rgba(16,16,16,0.95);
+      background-color: rgba(16,16,16,0.93);
       color: rgba(248,249,252,1.0);
     }
     .col-12{
