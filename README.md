@@ -1,7 +1,10 @@
 # JoshuaMacklin.github.io
 This will be the home of my personal website
 
+Light Mode
 ![alt tag](https://i.imgur.com/sN8ervt.png)
+
+Dark Mode
 ![alt tag](https://i.imgur.com/xxWdIBY.png)
 link to the website : https://JoshuaMacklin.github.io
 
