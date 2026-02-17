@@ -6,8 +6,6 @@
   <meta name="description" content="I'm a Boston based Software Engineer with a background in Penetration Testing / Security, Information Technology, and Design">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://kit.fontawesome.com/3011de5ccf.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.bunny.net/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -18,6 +16,15 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.add('light-theme');
+      }
+      // Dark is default, no class needed
+    })();
+  </script>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home">
@@ -39,31 +46,32 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-6 col-md-4">
-              <h1 class="my-0 site-logo"><a class="smoothscroll text-black" href="#contact" style="width: 300px;display: block;">Contact Me<span class="text-primary">.</span></a></h1>
+              <h1 class="my-0 site-logo"><a class="smoothscroll" href="#contact" style="width: 300px;display: block;">Contact Me<span class="text-primary">.</span></a></h1>
             </div>
             <div class="col-6 col-md-8">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
 
-                  <div class="d-inline-block d-lg-block ml-md-0 mr-auto py-3">
+                  <div class="d-inline-flex d-lg-inline-flex align-items-center ml-md-0 mr-auto py-3">
 
-                    <a class="toggle-btn text-black">
-                      <i class="fas fa-moon toggle-btn text-black" style="font-size: 1.75rem; padding-right: 10px;"></i>
+                    <a class="toggle-btn d-flex align-items-center" aria-label="Toggle theme" style="padding-right: 10px;">
+                      <svg class="toggle-icon toggle-icon-sun" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                      <svg class="toggle-icon toggle-icon-moon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     </a>
 
-                    <a href="/" class="site-menu-toggle js-menu-toggle text-black">
-                      <span class="icon-menu h3"></span> <span class="menu-text">Menu</span>
+                    <a href="/" class="site-menu-toggle js-menu-toggle d-flex align-items-center">
+                      <span style="margin-bottom: 0px;"class="icon-menu h3"></span> <span class="menu-text"></span>
                     </a>
 
                   </div>
 
                   <ul class="site-menu main-menu js-clone-nav d-none d-lg-none">
-                    <li><a href="#home" class="nav-link text-grey">Home</a></li>
-                    <li><a href="#about" class="nav-link text-grey">About Me</a></li>
-                    <li><a href="#portfolio" class="nav-link text-grey">Portfolio</a></li>
-                    <!-- <li><a href="#testimonials" class="nav-link text-grey">Testimonials</a></li> -->
-                    <li><a href="#contact" class="nav-link text-grey">Contact</a></li>
-                    <!-- <li><a href="/Joshua%20Macklins%20Resume.pdf" target="_blank" class="nav-link text-grey">Resume</a></li> -->
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Me</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <!-- <li><a href="#testimonials" class="nav-link">Testimonials</a></li> -->
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- <li><a href="/Joshua%20Macklins%20Resume.pdf" target="_blank" class="nav-link">Resume</a></li> -->
                   </ul>
                 </div>
               </nav>
@@ -84,7 +92,7 @@
               </div>
               <div class="text">
                 <p class="sub-text mb-5">Software Engineer</p>
-                <p><a href="#about" class="btn btn-outline-primary btn-md smoothscroll">Meet Me <i class="fas fa-arrow-down"></i></a></p>
+                <p><a href="#about" class="btn btn-outline-primary btn-md smoothscroll">Meet Me <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></a></p>
               </div>
             </div>
           </div>
@@ -180,7 +188,7 @@
         <div class="row mb-5">
           <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
             <a>
-              <img src="media/fiscally.png" alt="Image" class="img-fluid">
+              <img src="media/fiscally.png" alt="Image" class="img-fluid" width="607" height="1036">
             </a>
           </div>
           <div class="col-lg-5 h-100 jm-sticky-top mr-auto order-2 order-lg-1">
@@ -412,7 +420,7 @@
       </div>
     </div> <!-- END .site-section -->
 
-    <footer class="site-footer lightBack">
+    <footer class="site-footer">
       <div class="container">
         <div class="row">
           <!--  <div class="col-lg-4 mb-5 mb-lg-0">
@@ -507,39 +515,26 @@
   <script src="js/main.js"></script>
 
   <script>
-    let toggleBtn = document.querySelector('.toggle-btn');
-    let currentTheme = localStorage.getItem('currentTheme');
-
-    if (currentTheme){
-      document.body.classList.add('dark-theme');
-      document.querySelector('#navvy').classList.add('dark-theme-nav');
-      document.querySelector('.site-mobile-menu').classList.add('dark-theme');
-      $('.nav-link').toggleClass("text-grey text-othergrey");
-      $('.site-menu-toggle').toggleClass("text-black text-white");
-      $('.site-navbar .site-logo a').toggleClass("text-black text-white");
-      $('.toggle-btn').toggleClass("text-black text-white");
-      $('.site-footer').toggleClass("lightBack darkBack");
-      $('.testimonial').toggleClass("darkTest");
-    }
-
-    toggleBtn.addEventListener('click', function(){
-      document.body.classList.toggle('dark-theme');
-      document.querySelector('#navvy').classList.toggle('dark-theme-nav');
-      document.querySelector('.site-mobile-menu').classList.toggle('dark-theme');
-      $('.nav-link').toggleClass("text-grey text-othergrey");
-      $('.site-menu-toggle').toggleClass("text-black text-white");
-      $('.site-navbar .site-logo a').toggleClass("text-black text-white");
-      $('.toggle-btn').toggleClass("text-black text-white");
-      $('.site-footer').toggleClass("lightBack darkBack");
-      $('.testimonial').toggleClass("darkTest");
-
-      if(document.body.classList.contains('dark-theme')){
-        localStorage.setItem('currentTheme', 'themeActive')
-      }else{
-        localStorage.removeItem('currentTheme')
+    (function() {
+      var toggleBtn = document.querySelector('.toggle-btn');
+      var sunIcon = document.querySelector('.toggle-icon-sun');
+      var moonIcon = document.querySelector('.toggle-icon-moon');
+      
+      function updateIcon() {
+        var isLight = document.documentElement.classList.contains('light-theme');
+        sunIcon.style.display = isLight ? 'none' : 'inline';
+        moonIcon.style.display = isLight ? 'inline' : 'none';
       }
-
-    })
+      
+      updateIcon();
+      
+      toggleBtn.addEventListener('click', function() {
+        document.documentElement.classList.toggle('light-theme');
+        var isLight = document.documentElement.classList.contains('light-theme');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        updateIcon();
+      });
+    })();
   </script>
 
 

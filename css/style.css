@@ -1,17 +1,80 @@
-/* Base */
-/* body{
-  background-color: white;
-} */
+/* Local Roboto font faces */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/roboto/roboto-latin-300-normal.woff2') format('woff2');
+}
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/roboto/roboto-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/roboto/roboto-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/roboto/roboto-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/roboto/roboto-latin-900-normal.woff2') format('woff2');
+}
+
+/* Base */
+
+/* CSS Custom Properties - Dark theme as default */
+:root {
+  --bg-primary: rgba(16, 16, 16, 1);
+  --bg-secondary: rgba(25, 25, 25, 1);
+  --bg-navbar: rgba(16, 16, 16, 0.93);
+  --text-primary: rgba(248, 249, 252, 1);
+  --text-secondary: #b3b3b3;
+  --text-muted: #8c8c8c;
+  --form-bg: #2a2a2a;
+  --form-border: #333;
+  --mobile-menu-bg: rgba(25, 25, 25, 1);
+}
+
+:root.light-theme {
+  --bg-primary: rgba(248, 249, 252, 1);
+  --bg-secondary: rgba(50, 50, 50, 1);
+  --bg-navbar: rgba(248, 249, 252, 0.9);
+  --text-primary: #000;
+  --text-secondary: #212529;
+  --text-muted: gray;
+  --form-bg: #f6f6f6;
+  --form-border: #f6f6f6;
+  --mobile-menu-bg: #fff;
+}
 
 body {
   line-height: 1.7;
-  /* color: gray; */
+  color: var(--text-primary);
   font-weight: 300;
   font-size: 1rem;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-synthesis: none;
   transition: background-color .3s, color .3s;
-  background-color: rgba(248,249,252,1.0);
+  background-color: var(--bg-primary);
 }
 
 /* body h1, h2, h3, h4, h5, h6 {
@@ -39,12 +102,30 @@ a {
   overflow: hidden; }
 
 .text-black {
-  color: #000 !important; }
+  color: var(--text-primary) !important; }
 
-.text-grey {
-  color: #212529}
-.text-othergrey {
-  color: #fff}
+.toggle-btn,
+.site-menu-toggle,
+.site-navbar .site-logo a {
+  color: var(--text-primary);
+  transition: color .3s; }
+  .toggle-btn:hover,
+  .site-menu-toggle:hover {
+    color: var(--text-secondary); }
+
+:root.light-theme .site-navbar .site-menu-toggle,
+:root.light-theme .site-navbar .toggle-btn,
+:root.light-theme .site-navbar .site-menu-toggle .icon-menu,
+:root.light-theme .site-navbar .site-menu-toggle .menu-text {
+  color: var(--text-primary) !important; }
+  :root.light-theme .site-navbar .site-menu-toggle:hover,
+  :root.light-theme .site-navbar .toggle-btn:hover {
+    color: var(--text-secondary) !important; }
+
+.nav-link {
+  color: var(--text-secondary); }
+  .nav-link:hover {
+    color: var(--text-primary); }
 
 .bg-black {
   background: #000 !important; }
@@ -117,10 +198,11 @@ a {
 
 .form-control {
   height: 47px;
-  background: #f6f6f6;
+  background: var(--form-bg);
   border-radius: 0;
-  border: 1px solid #f6f6f6;
+  border: 1px solid var(--form-border);
   border-radius: 25px;
+  color: var(--text-primary);
 }
   .form-control:active, .form-control:focus {
     border-color: #bd1220; }
@@ -166,14 +248,8 @@ a {
 .site-footer {
   padding-top: 10rem;
   padding-bottom: 1rem;
-  /* background: rgba(50,50,50,1.0); */
+  background: var(--bg-secondary);
 }
-  .lightBack{
-    background-color: rgba(50,50,50,1.0);
-  }
-  .darkBack{
-    background-color: rgba(25,25,25,1.0);
-  }
 
   .site-footer p {
     color: #8c8c8c; }
@@ -241,7 +317,7 @@ a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
 
 .site-navbar {
-  background-color: rgba(248,249,252,0.90);
+  background-color: var(--bg-navbar);
   margin-bottom: 0px;
   width: 100%;
   padding: 15px 0; }
@@ -265,7 +341,7 @@ a {
       padding: 10px 5px; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 20px 10px;
-        color: black;
+        color: var(--text-primary);
         font-size: 15px;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a.active {
@@ -379,7 +455,7 @@ a {
   right: 0;
   z-index: 2000;
   padding-top: 20px;
-  background: #fff;
+  background: var(--mobile-menu-bg);
   height: calc(100vh);
   -webkit-transform: translateX(110%);
   -ms-transform: translateX(110%);
@@ -553,7 +629,8 @@ a {
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
-  position: relative; }
+  position: relative;
+  contain: layout style paint; }
   .site-blocks-cover.overlay {
     position: relative; }
     .site-blocks-cover.overlay:before {
@@ -566,20 +643,29 @@ a {
       background: rgba(0, 0, 0, 0.2); }
   .site-blocks-cover, .site-blocks-cover > .container > .row {
     min-height: 600px;
-    height: calc(90vh); }
+    height: 90svh; }
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page > .container > .row {
     min-height: 600px;
-    height: calc(80vh); }
+    height: 80svh; }
   .site-blocks-cover h1 {
     font-size: 8rem;
     font-weight: 900;
-    line-height: 1; }
+    line-height: 1;
+    font-family: Roboto, 'Roboto-fallback', sans-serif; }
+
+@font-face {
+  font-family: 'Roboto-fallback';
+  src: local('Arial');
+  size-adjust: 100.3%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-height-override: 1.2; }
     @media (max-width: 991.98px) {
       .site-blocks-cover h1 {
         font-size: 4rem; } }
   .site-blocks-cover .sub-text {
     font-size: 1.4rem;
-    color: gray;
+    color: var(--text-muted);
     font-weight: 300; }
     @media (max-width: 991.98px) {
       .site-blocks-cover .sub-text {
@@ -636,8 +722,6 @@ a {
           padding-left: 0; } }
 
 .site-menu-toggle .menu-text {
-  position: relative;
-  top: -6px;
   text-transform: uppercase; }
 
 .hero-slider .owl-nav {
@@ -848,8 +932,8 @@ a {
 .person h3 {
   font-size: 1.2rem; }
 
-.darkTest{
-  background-color: rgba(25,25,25,1.0);
+.testimonial-dark {
+  background-color: var(--bg-secondary);
 }
 
 .testimonial {
@@ -912,16 +996,10 @@ a {
     .img-fluid{
       border-radius: 25px;
       box-shadow: 0px 0 50px -5px rgba(0, 0, 0, 0.2);
+      aspect-ratio: attr(width) / attr(height);
+      height: auto;
     }
 
-    .dark-theme{
-      background-color: rgba(16,16,16,1.0);
-      color: rgba(248,249,252,1.0);
-    }
-    .dark-theme-nav{
-      background-color: rgba(16,16,16,0.93);
-      color: rgba(248,249,252,1.0);
-    }
     .col-12{
       display: flex;
       justify-content: center;
