@@ -6,9 +6,6 @@
   <meta name="description" content="Software Engineer with a background in Penetration Testing, Security, Information Technology, and Design. Building full-stack web applications.">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function() {
@@ -38,6 +35,7 @@
           <li><a href="#home" class="nav__link smoothscroll">Home</a></li>
           <li><a href="#about" class="nav__link smoothscroll">About</a></li>
           <li><a href="#portfolio" class="nav__link smoothscroll">Portfolio</a></li>
+          <li><a href="#devblog" class="nav__link smoothscroll">Devblog</a></li>
           <li><a href="#connect" class="nav__link smoothscroll">Connect</a></li>
         </ul>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -54,6 +52,7 @@
         <li><a href="#home" class="mobile-menu__link smoothscroll">Home</a></li>
         <li><a href="#about" class="mobile-menu__link smoothscroll">About</a></li>
         <li><a href="#portfolio" class="mobile-menu__link smoothscroll">Portfolio</a></li>
+        <li><a href="#devblog" class="mobile-menu__link smoothscroll">Devblog</a></li>
         <li><a href="#connect" class="mobile-menu__link smoothscroll">Connect</a></li>
       </ul>
     </div>
@@ -164,6 +163,17 @@
         </div>
       </div>
     </section>
+
+    <section class="devblog" id="devblog" aria-labelledby="devblog-heading">
+      <div class="container">
+        <span class="section-label">Latest Thoughts</span>
+        <h2 id="devblog-heading" class="section-title">Devblog</h2>
+        <div class="devblog__grid" id="devblog-grid">
+          <!-- Blog cards injected by JS from js/posts.json -->
+        </div>
+      </div>
+    </section>
+    
 
     <footer class="connect" id="connect" aria-labelledby="connect-heading">
       <div class="container">

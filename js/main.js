@@ -111,22 +111,127 @@
   }
 
   // --- Scroll Animations (Intersection Observer) ---
+  let scrollAnimObserver = null;
+
+  function getScrollAnimObserver() {
+    if (!scrollAnimObserver) {
+      scrollAnimObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+    }
+    return scrollAnimObserver;
+  }
+
+  function observeAnimatedElements(elements) {
+    if (!elements || !elements.length) return;
+    const observer = getScrollAnimObserver();
+    elements.forEach((el) => observer.observe(el));
+  }
+
   function initScrollAnimations() {
-    const animateEls = document.querySelectorAll('[data-animate]');
-    if (!animateEls.length) return;
+    observeAnimatedElements(document.querySelectorAll('[data-animate]'));
+  }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
+  // --- Devblog (dynamic posts from posts.json) ---
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
 
-    animateEls.forEach((el) => observer.observe(el));
+  function getBasePath() {
+    return window.location.pathname.includes('/blog') ? '../' : '';
+  }
+
+  function renderBlogCard(post, postBasePath) {
+    const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    });
+    const tagsHtml = (post.tags || [])
+      .map((t) => `<span>${escapeHtml(t)}</span>`)
+      .join('');
+    const article = document.createElement('article');
+    article.className = 'blog-card';
+    article.setAttribute('data-animate', '');
+    article.innerHTML = `
+      <time class="blog-card__date" datetime="${post.date}">${escapeHtml(dateFormatted)}</time>
+      <h3 class="blog-card__title">${escapeHtml(post.title)}</h3>
+      <p class="blog-card__excerpt">${escapeHtml(post.excerpt)}</p>
+      <div class="blog-card__tags">${tagsHtml}</div>
+      <a href="${escapeHtml(postBasePath)}${escapeHtml(post.slug)}.html" class="blog-card__link">
+        Read More
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    `;
+    return article;
+  }
+
+  async function initDevblog() {
+    const grid = document.getElementById('devblog-grid');
+    if (!grid) return;
+
+    const basePath = getBasePath();
+    const postBasePath = 'blog/';
+
+    try {
+      const res = await fetch(basePath + 'js/posts.json');
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      const posts = await res.json();
+      const sorted = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const toShow = sorted.slice(0, 6);
+
+      toShow.forEach((post) => {
+        grid.appendChild(renderBlogCard(post, postBasePath));
+      });
+
+      observeAnimatedElements(grid.querySelectorAll('.blog-card'));
+
+      const container = grid.closest('.container');
+      if (container && !container.querySelector('.devblog__footer')) {
+        const footer = document.createElement('div');
+        footer.className = 'devblog__footer';
+        footer.innerHTML = '<a href="blog/" class="devblog__view-all">View all blogs</a>';
+        container.appendChild(footer);
+      }
+    } catch (err) {
+      console.error('Failed to load devblog posts:', err);
+      grid.innerHTML =
+        '<p class="devblog__empty">Unable to load posts. Please try again later.</p>';
+    }
+  }
+
+  async function initAllBlogs() {
+    const grid = document.getElementById('all-blogs-grid');
+    if (!grid) return;
+
+    const basePath = getBasePath();
+    const postBasePath = '';
+
+    try {
+      const res = await fetch(basePath + 'js/posts.json');
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      const posts = await res.json();
+      const sorted = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      sorted.forEach((post) => {
+        grid.appendChild(renderBlogCard(post, postBasePath));
+      });
+
+      observeAnimatedElements(grid.querySelectorAll('.blog-card'));
+    } catch (err) {
+      console.error('Failed to load blog posts:', err);
+      grid.innerHTML =
+        '<p class="devblog__empty">Unable to load posts. Please try again later.</p>';
+    }
   }
 
   // --- Skill Bar Animations ---
@@ -167,6 +272,8 @@
     initStickyHeader();
     initBackToTop();
     initScrollAnimations();
+    initDevblog();
+    initAllBlogs();
     initSkillBars();
     initYear();
   }
