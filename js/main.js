@@ -139,7 +139,7 @@
     observeAnimatedElements(document.querySelectorAll('[data-animate]'));
   }
 
-  // --- Devblog (dynamic posts from posts.json) ---
+  // --- Devlog (dynamic posts from posts.json) ---
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
@@ -175,8 +175,8 @@
     return article;
   }
 
-  async function initDevblog() {
-    const grid = document.getElementById('devblog-grid');
+  async function initDevlog() {
+    const grid = document.getElementById('devlog-grid');
     if (!grid) return;
 
     const basePath = getBasePath();
@@ -196,16 +196,16 @@
       observeAnimatedElements(grid.querySelectorAll('.blog-card'));
 
       const container = grid.closest('.container');
-      if (container && !container.querySelector('.devblog__footer')) {
+      if (container && !container.querySelector('.devlog__footer')) {
         const footer = document.createElement('div');
-        footer.className = 'devblog__footer';
-        footer.innerHTML = '<a href="blog/" class="devblog__view-all">View all blogs</a>';
+        footer.className = 'devlog__footer';
+        footer.innerHTML = '<a href="blog/" class="devlog__view-all">View all blogs</a>';
         container.appendChild(footer);
       }
     } catch (err) {
-      console.error('Failed to load devblog posts:', err);
+      console.error('Failed to load devlog posts:', err);
       grid.innerHTML =
-        '<p class="devblog__empty">Unable to load posts. Please try again later.</p>';
+        '<p class="devlog__empty">Unable to load posts. Please try again later.</p>';
     }
   }
 
@@ -230,7 +230,7 @@
     } catch (err) {
       console.error('Failed to load blog posts:', err);
       grid.innerHTML =
-        '<p class="devblog__empty">Unable to load posts. Please try again later.</p>';
+        '<p class="devlog__empty">Unable to load posts. Please try again later.</p>';
     }
   }
 
@@ -272,7 +272,7 @@
     initStickyHeader();
     initBackToTop();
     initScrollAnimations();
-    initDevblog();
+    initDevlog();
     initAllBlogs();
     initSkillBars();
     initYear();

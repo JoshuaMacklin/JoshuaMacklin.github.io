@@ -35,7 +35,7 @@
           <li><a href="#home" class="nav__link smoothscroll">Home</a></li>
           <li><a href="#about" class="nav__link smoothscroll">About</a></li>
           <li><a href="#portfolio" class="nav__link smoothscroll">Portfolio</a></li>
-          <li><a href="#devblog" class="nav__link smoothscroll">Devblog</a></li>
+          <li><a href="#devlog" class="nav__link smoothscroll">Devlog</a></li>
           <li><a href="#connect" class="nav__link smoothscroll">Connect</a></li>
         </ul>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -52,7 +52,7 @@
         <li><a href="#home" class="mobile-menu__link smoothscroll">Home</a></li>
         <li><a href="#about" class="mobile-menu__link smoothscroll">About</a></li>
         <li><a href="#portfolio" class="mobile-menu__link smoothscroll">Portfolio</a></li>
-        <li><a href="#devblog" class="mobile-menu__link smoothscroll">Devblog</a></li>
+        <li><a href="#devlog" class="mobile-menu__link smoothscroll">Devlog</a></li>
         <li><a href="#connect" class="mobile-menu__link smoothscroll">Connect</a></li>
       </ul>
     </div>
@@ -97,7 +97,35 @@
         <div class="portfolio__grid">
           <article class="project-card project-card--featured" data-animate>
             <div class="project-card__image-wrap">
-              <img src="media/fiscally.png" alt="Fiscally app screenshot" class="project-card__image" width="607" height="1036" loading="lazy">
+              <img src="media/Bartender.png" alt="Bartender app screenshot" class="project-card__image" width="607" height="1036" loading="lazy">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Bartender</h3>
+              <p class="project-card__tagline">The go-to app for all of your barkeeping, and mixologist needs</p>
+              <p class="project-card__desc">Bartender tracks your bar’s ingredients, offers 100+ IBA cocktails, filters drinks by what you have, auto‑deducts used items, and lets you save favorites for quick access.</p>
+              <div class="project-card__tags">
+                <span>Next.js</span>
+                <span>Convex</span>
+                <span>Clerk</span>
+                <span>Shadcn UI</span>
+                <span>Tailwind CSS</span>
+              </div>
+              <!-- <a href="" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                Watch Video Walkthrough
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </a> -->
+              <div>
+                <a href="https://bar-tender-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">Live Site</a>
+              </div>
+              <div>
+                <a href="https://github.com/JoshuaMacklin/Dun" target="_blank" rel="noopener noreferrer" class="project-card__link">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="project-card__image-wrap">
+              <img src="media/fiscally.png" alt="Fiscally app screenshot" class="project-card__image" loading="lazy">
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Fiscally</h3>
@@ -111,64 +139,48 @@
                 <span>Plaid API</span>
                 <span>Express</span>
               </div>
-              <a href="https://vimeo.com/909173214" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                Watch Video Walkthrough
-              </a>
+              <div>
+                <a href="https://vimeo.com/909173214" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                  Watch Video Walkthrough
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+              </div>
             </div>
           </article>
 
           <article class="project-card" data-animate>
             <div class="project-card__image-wrap">
-              <img src="https://i.imgur.com/B6v0qor.png" alt="Animated Weather app screenshot" class="project-card__image" width="600" height="400" loading="lazy">
+              <!-- project-card__placeholder-img" -->
+              <img src="media/Dun.png" alt="Dun task manager app screenshot" class="project-card__image" loading="lazy">
             </div>
             <div class="project-card__content">
-              <h3 class="project-card__title">Animated Weather</h3>
-              <p class="project-card__desc">Uses two APIs to locate anywhere in the world by search term, plot coordinates, and query OpenWeatherMap—then displays a visually correct animation of the current weather.</p>
+              <h3 class="project-card__title">Dun</h3>
+              <p class="project-card__tagline">Get your tasks done</p>
+              <p class="project-card__desc">A clean task manager that tracks remaining and completed tasks with a simple & intuitive interface.</p>
               <div class="project-card__tags">
-                <span>JavaScript</span>
-                <span>APIs</span>
-                <span>OpenWeatherMap</span>
+                <span>Next.js</span>
+                <span>Tailwind CSS</span>
+                <span>Convex Database</span>
+                <span>Clerk Authentication</span>
               </div>
-              <a href="https://joshuamacklin.github.io/API-Animated-Weather/" target="_blank" rel="noopener noreferrer" class="project-card__link">View Live</a>
+                <div>
+                  <a href="https://dun-tasks.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">Live Site</a>
+                </div>
+                <div>
+                  <a href="https://github.com/JoshuaMacklin/Dun" target="_blank" rel="noopener noreferrer" class="project-card__link">GitHub</a>
+                </div>
             </div>
           </article>
-
-          <article class="project-card" data-animate>
-            <div class="project-card__image-wrap">
-              <img src="https://i.imgur.com/HWoztBw.png" alt="To-Do List app screenshot" class="project-card__image" width="600" height="400" loading="lazy">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">To-Do List</h3>
-              <p class="project-card__desc">A clean task manager that tracks remaining and completed tasks with a simple, intuitive interface built with vanilla HTML, CSS, and JavaScript.</p>
-              <div class="project-card__tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-              </div>
-              <a href="https://joshuamacklin.github.io/To-Do-List/" target="_blank" rel="noopener noreferrer" class="project-card__link">View Live</a>
-            </div>
-          </article>
-
-          <!-- <article class="project-card project-card--placeholder" data-animate>
-            <div class="project-card__image-wrap project-card__placeholder-img">
-              <span>Coming Soon</span>
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Project 4</h3>
-              <p class="project-card__desc">Your next project could be featured here.</p>
-            </div>
-          </article> -->
 
         </div>
       </div>
     </section>
 
-    <section class="devblog" id="devblog" aria-labelledby="devblog-heading">
+    <section class="devlog" id="devlog" aria-labelledby="devlog-heading">
       <div class="container">
         <span class="section-label">Latest Thoughts</span>
-        <h2 id="devblog-heading" class="section-title">Devblog</h2>
-        <div class="devblog__grid" id="devblog-grid">
+        <h2 id="devlog-heading" class="section-title">Devlog</h2>
+        <div class="devlog__grid" id="devlog-grid">
           <!-- Blog cards injected by JS from js/posts.json -->
         </div>
       </div>
