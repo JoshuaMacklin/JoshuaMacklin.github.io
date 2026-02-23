@@ -1,9 +1,16 @@
 [
   {
-    "title": "Feb 9th - Feb 15th",
+    "title": "Feb: Week 2",
     "date": "2025-02-16",
     "excerpt": "Launched Bartender, Revamped Website, and Started Devlog",
-    "slug": "feb-9th-through-feb-15th",
+    "slug": "feb: week 2",
     "tags": ["Bartender", "Website", "Devlog"]
+  },
+  {
+    "title": "Feb: Week 3",
+    "date": "2025-02-22",
+    "excerpt": "Worked on a project to summarize documents for non-native English speakers.",
+    "slug": "feb: week 3",
+    "tags": ["AI", "Document Summarization", "Translation"]
   }
 ]
