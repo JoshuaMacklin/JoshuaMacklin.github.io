@@ -12,5 +12,12 @@
     "excerpt": "Worked on a project to summarize documents for non-native English speakers.",
     "slug": "feb: week 3",
     "tags": ["AI", "Document Summarization", "Translation"]
+  },
+  {
+    "title": "Feb: Week 4",
+    "date": "2026-03-03",
+    "excerpt": "Designed the doc-summarization workflow, solved Best Time to Buy and Sell Stock in O(N), and reviewed \"Attention Is All You Need.\"",
+    "slug": "feb: week 4",
+    "tags": ["AI", "Workflow Design", "Coding Challenge", "Paper Review"]
   }
 ]
